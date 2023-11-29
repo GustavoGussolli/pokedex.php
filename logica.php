@@ -11,7 +11,7 @@
     $options = getopt($short, $long);//informa o nome pelo terminal
 
 
-    $nome = $options['pokemon']; //procurar o nom
+    $nome = $options['pokemon']; //procurar o nome
     //print_r($options);
     //die();
 
