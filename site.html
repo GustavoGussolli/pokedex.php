@@ -1,3 +1,23 @@
+<?php
+
+    //include 'logica.php';
+
+    $pokemons_api = file_get_contents("https://pokeapi.co/api/v2/pokemon");
+    $pokemons = json_decode($pokemons_api , true);
+
+    
+    for($i = 0; $i < 20; $i++){
+
+        $pokemon = $pokemons['results'][$i];
+
+        $todas_infos_api = file_get_contents($pokemon['url']);
+        $pokemons['results'][$i] = json_decode($todas_infos_api, true);
+
+    }
+    
+
+?>
+
 <html>
     
    
@@ -16,7 +36,7 @@
 
         .pokemon {
 
-            width: 15%;
+            width: 20%;
             border: solid 5px #000;
             padding: 15px;
             float: left;
@@ -47,10 +67,10 @@
 
             <div class="pokemon">
 
-            <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/ca3db4aad5c85a525d9be86852b26db1db7a22c0.png" alt="A imagem não está disponivel" width="200px">
-            <h1>Charizard X</h1>
-            <p>Peso: 90.5</p>
-            <p>Altura: 1.70</p>
+            <img src="<?= $pokemons['results'][$i]['sprites']['other']['dream_world']['front_default'] ?>" alt="A imagem não está disponivel" width="200px">
+            <h1> <?= $pokemons['results'][$i]['name'] ?></h1>
+            <p>Peso: x</p>
+            <p>Altura: x</p>
 
             </div>
             <?php endfor; ?>
