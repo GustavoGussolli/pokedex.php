@@ -1,0 +1,61 @@
+<html>
+    
+   
+    <head>
+        <title>Pokedex</title>
+
+        <style>
+
+        #pesquisa{
+
+            background: black;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .pokemon {
+
+            width: 15%;
+            border: solid 5px #000;
+            padding: 15px;
+            float: left;
+            margin: 10px 10px 10px 10px;
+
+        }
+
+        .pokemon img{
+            max-width: 100%
+        }
+
+
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div id="Pesquisa">
+            <form>
+                <input type="text" placeholder="Digite um Pokémon" >
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+
+        <?php for($i = 0 ; $i < 20; $i++): ?>
+        <div id="pokemons">
+
+            <div class="pokemon">
+
+            <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/ca3db4aad5c85a525d9be86852b26db1db7a22c0.png" alt="A imagem não está disponivel" width="200px">
+            <h1>Charizard X</h1>
+            <p>Peso: 90.5</p>
+            <p>Altura: 1.70</p>
+
+            </div>
+            <?php endfor; ?>
+
+        </div>
+
+    </body>
+</html>
